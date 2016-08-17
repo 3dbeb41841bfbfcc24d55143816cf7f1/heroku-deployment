@@ -35,8 +35,8 @@ heroku destroy                      # destroy the app permanently
 
 ```bash
 heroku addons:create mongolab:sandbox  # Add a mongolab sandbox database
-heroku config
-heroku addons
+heroku config                          # Show the heroku environment settings
+heroku addons                          # Show the heroku addons for this project
 ```
 
 ### JavaScript code for Connecting to either a MongoLab or Localhost Database
@@ -62,5 +62,5 @@ mongoose.connection.once('open', function() {
 ### Running a seeds.js file on Heroku
 
 ```bash
-heroku run node seeds.js
+heroku run node seeds.js               # Run `node seeds.js` on the heroku dyno
 ```
