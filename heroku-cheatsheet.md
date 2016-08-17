@@ -30,3 +30,37 @@ heroku addons:remove name           # uninstall an addons
 heroku addons:clear                 # uninstall all addons
 heroku destroy                      # destroy the app permanently
 ```
+
+## MongoLab
+
+```bash
+heroku addons:create mongolab:sandbox  # Add a mongolab sandbox database
+heroku config
+heroku addons
+```
+
+### JavaScript code for Connecting to either a MongoLab or Localhost Database
+
+```javascript
+// Connect to database
+if (process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI);
+}
+else {
+  mongoose.connect('mongodb://localhost/express-movies');
+}
+mongoose.connection.on('error', function(err) {
+  console.error('MongoDB connection error: ' + err);
+  process.exit(-1);
+  }
+);
+mongoose.connection.once('open', function() {
+  console.log("Mongoose has connected to MongoDB!");
+});
+```
+
+### Running a seeds.js file on Heroku
+
+```bash
+heroku run node seeds.js
+```
