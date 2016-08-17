@@ -3,7 +3,7 @@
 ## General Commands
 
 ```bash
-heroku help                         # show this usage
+heroku help                         # show usage for heroku command
 heroku version                      # show the version
 heroku apps                         # list your apps
 ```
