@@ -67,6 +67,7 @@ Authentication successful.
 Once you have a project that is managed with _Git_ (a Git project), you can run the `heroku` command to prepare the project for deployment to Heroku:
 
 ```bash
+git remote -v     # Displays current Git remotes
 heroku create
 git remote -v     # Displays the newly created Git remotes for Heroku
 ```
@@ -79,7 +80,7 @@ git push heroku master
 
 > Note that git will only push your latest committed code to Heroku. Any uncommitted code will _not_ be deployed!
 
-You can ckeck the status of your deployment and view the logs using:
+You can check the status of your deployment and view the logs using:
 
 ```bash
 heroku ps         # Check the process status
